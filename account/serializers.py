@@ -40,7 +40,7 @@ class UserRegistrationSerializer(serializers.Serializer):
 
         # Create the activation link
         uid = urlsafe_base64_encode(force_bytes(user.id))  # Use user email for activation
-        activation_link = f"http://127.0.0.1:8000/api/user/activate/{uid}/{token}"
+        activation_link = f"https://foodooni-food-shop-backend.onrender.com/api/user/activate/{uid}/{token}"
 
         # Send the activation email
         body = f"Hi {name}, use the link below to verify your email:\n{activation_link}"
