@@ -174,6 +174,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000",
     "http://127.0.0.1:5500",
     "http://127.0.0.1:5501",
+    "https://foodoni.netlify.app",
 ]
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
