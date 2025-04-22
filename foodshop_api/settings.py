@@ -30,7 +30,7 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-CSRF_TRUSTED_ORIGINS = ['https://foodooni-food-shop-backend-p6lr.onrender.com','https://*.127.0.0.1'] # first part will be your deploy project’s domain name
+CSRF_TRUSTED_ORIGINS = ['https://foodooni-food-shop-backend-7mjp.onrender.com','https://*.127.0.0.1'] # first part will be your deploy project’s domain name
 
 
 # Application definition
