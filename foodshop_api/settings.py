@@ -184,3 +184,9 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = env("EMAIL")  # Ensure this is set in your .env file
 EMAIL_HOST_PASSWORD = env("EMAIL_PASSWORD")  # Ensure this is set in your .env file
+
+
+# Celery Configuration
+CELERY_BROKER_URL = 'redis://localhost:6379/0'  # Make sure Redis is running locally
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'

@@ -5,6 +5,7 @@ from rest_framework import status
 from .models import Order, OrderItem
 from cart.models import Cart, CartItem
 from .serializers import OrderSerializer
+from .tasks import send_order_confirmation_email  # 🔁 Import your Celery task
 
 
 from django.utils.timezone import now
@@ -59,6 +60,9 @@ class OrderView(APIView):
 
         # Clear the cart
         cart.items.all().delete()
+        
+        # ✅ Send order confirmation email in background via Celery
+        send_order_confirmation_email.delay(request.user.email, order.id)
 
         # Serialize and return the created order
         serializer = OrderSerializer(order)
