@@ -187,6 +187,7 @@ EMAIL_HOST_PASSWORD = env("EMAIL_PASSWORD")  # Ensure this is set in your .env f
 
 
 # Celery Configuration
-CELERY_BROKER_URL = 'redis://localhost:6379/0'  # Make sure Redis is running locally
+# CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_BROKER_URL = os.getenv('REDIS_URL')
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
