@@ -40,7 +40,7 @@ class UserRegistrationSerializer(serializers.Serializer):
 
         # Create the activation link
         uid = urlsafe_base64_encode(force_bytes(user.id))  # Use user email for activation
-        activation_link = f"https://foodooni-food-shop-backend.onrender.com/api/user/activate/{uid}/{token}"
+        activation_link = f"https://foodooni-food-shop-backend-ogvo.onrender.com/api/user/activate/{uid}/{token}"
 
         # Send the activation email
         body = f"Hi {name}, use the link below to verify your email:\n{activation_link}"
@@ -92,7 +92,7 @@ class SendPasswordResetEmailSerializer(serializers.Serializer):
         print('Encoded UID', uid)
         token = PasswordResetTokenGenerator().make_token(user)
         print('Password Reset Token', token)
-        link = f'http://127.0.0.1:5501/reset_pass.html?uid={uid}&token={token}'
+        link = f'https://foodooni-food-shop-backend-ogvo.onrender.com/reset_pass.html?uid={uid}&token={token}'
         print('Password Reset Link', link)
         # Send EMail
         body = 'Click Following Link to Reset Your Password '+link
